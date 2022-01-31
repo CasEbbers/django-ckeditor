@@ -219,10 +219,10 @@ Alternatively, you can use the included ``CKEditorWidget`` as the widget for a f
     from post.models import Post
 
     class PostAdminForm(forms.ModelForm):
-        content = forms.CharField(widget=CKEditorWidget())
         class Meta:
             model = Post
             fields = '__all__'
+            widgets = {'content': CKEditorWidget()}
 
     class PostAdmin(admin.ModelAdmin):
         form = PostAdminForm
